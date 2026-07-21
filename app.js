@@ -7,7 +7,11 @@ const app = express();
 
 await connectDB();
 
+//Importante la configuración del cors
 app.use(cors());
+
+//Importante decirle que recibe las peticiones en json
+app.use( express.json() );
 
 app.use("/clients", clientsRouter);
 

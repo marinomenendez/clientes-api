@@ -14,13 +14,13 @@ export const createClient = async (req, res) => {
 };
 
 export const updateClient = async (req, res) => {
-  const client = await Client.findByIdAndUpdate(req.params.id, req.body, {
+  const client = await Client.findByIdAndUpdate(req.params._id, req.body, {
     new: true,
   });
   res.json(client);
 };
 
 export const deleteClient = async (req, res) => {
-  const client = await Client.findByIdAndDelete(req.params.id);
+  const client = await Client.findByIdAndDelete(req.params._id);
   res.sendStatus(204);
 };

@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', controller.getClients);
 router.post('/new',controller.createClient);
-router.post('/update/:id',controller.updateClient);
-router.post('/delete/:id',controller.deleteClient);
+router.put('/update/:_id',controller.updateClient);
+router.delete('/delete/:_id',controller.deleteClient);
 
 export default router;
