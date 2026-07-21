@@ -3,6 +3,7 @@ import * as controller from '../controllers/clientsController.js';
 
 const router = express.Router();
 
+router.get('/:id', controller.getClientById);
 router.get('/', controller.getClients);
 router.post('/new',controller.createClient);
 router.put('/update/:_id',controller.updateClient);

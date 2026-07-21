@@ -7,6 +7,12 @@ export const getClients = async (req, res) => {
   res.json(clients);
 };
 
+export const getClientById = async (req, res) => {
+  const client = await Client.findById(req.params.id);
+  console.log("clientById desde clientsController: ", client);
+  res.json(client);
+};
+
 export const createClient = async (req, res) => {
   const client = new Client(req.body);
   await client.save();
