@@ -2,7 +2,7 @@ import { connectDB } from "../config/db.js";
 import Client from "../models/Client.js";
 
 export const getClients = async (req, res) => {
-  const clients = await Client.find();
+  const clients = await Client.find().sort({ciudad: 1});
   console.log("clients desde clientsController: ", clients);
   res.json(clients);
 };
