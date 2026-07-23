@@ -1,5 +1,6 @@
 import express from "express";
 import clientsRouter from "./routes/clientsRoutes.js";
+import usersRoutes from './routes/usersRoutes.js';
 import { connectDB } from "./config/db.js";
 import cors from "cors";
 
@@ -14,6 +15,8 @@ app.use(cors());
 app.use( express.json() );
 
 app.use("/clients", clientsRouter);
+
+app.use('/users', usersRoutes);
 
 app.listen(3000, () => {
   console.log("Servidor node iniciado app clientes-api en el puerto 3000");
